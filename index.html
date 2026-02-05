@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rose Day Surprise</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/scene.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+  <body>
+    <main class="scene" aria-live="polite">
+      <section class="scene__background" aria-hidden="true">
+        <div class="sky-glow"></div>
+        <div class="grass-layer"></div>
+        <div class="grass-layer grass-layer--front"></div>
+      </section>
+
+      <section class="scene__content">
+        <header class="intro" data-scene="intro">
+          <p class="eyebrow">Happy Rose Day</p>
+          <h1>For the love of my life</h1>
+          <p class="lead">
+            I made a tiny adventure just for you. Follow the smiley, find the gift, and
+            open the surprise box.
+          </p>
+          <button class="primary" data-action="start">Tap to begin</button>
+        </header>
+
+        <section class="path" data-scene="path" hidden>
+          <div class="guide">
+            <div class="smiley" role="img" aria-label="Smiling guide">😊</div>
+            <div class="speech" id="speech">Let’s take a little walk together.</div>
+          </div>
+          <div class="trail">
+            <div class="trail__dot"></div>
+            <div class="trail__dot"></div>
+            <div class="trail__dot"></div>
+          </div>
+          <button class="secondary" data-action="follow">Follow the guide</button>
+        </section>
+
+        <section class="gift" data-scene="gift" hidden>
+          <div class="gift__box" data-action="open-gift" role="button" aria-label="Open the gift box" tabindex="0">
+            <img
+              class="gift__img gift__img--closed"
+              src="assets/images/ui/gift-box-closed.png"
+              alt="Closed gift box"
+            />
+            <img
+              class="gift__img gift__img--open"
+              src="assets/images/ui/gift-box-open.png"
+              alt="Open gift box"
+            />
+          </div>
+          <p class="lead">Tap the box to open it.</p>
+        </section>
+
+        <section class="reveal" data-scene="reveal" hidden>
+          <div class="message">
+            <h2>You are my favorite miracle 🌹</h2>
+            <p>
+              Thank you for every laugh, every hug, and every little moment we share.
+              Here are some of my favorite memories with you.
+            </p>
+          </div>
+          <div class="gallery" aria-label="Photo memories">
+            <button class="gallery__nav" data-action="prev">‹</button>
+            <figure class="gallery__frame">
+              <img src="assets/images/photos/img1.jpg" alt="Our memory" />
+            </figure>
+            <button class="gallery__nav" data-action="next">›</button>
+          </div>
+          <button class="secondary" data-action="restart">Replay surprise</button>
+        </section>
+      </section>
+
+      <canvas class="petals" aria-hidden="true"></canvas>
+    </main>
+
+    <audio id="bg-music" src="assets/audio/bg-music.mp3" loop></audio>
+
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>

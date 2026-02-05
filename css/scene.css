@@ -1,0 +1,108 @@
+.scene {
+  display: grid;
+  place-items: center;
+  padding: 3rem 1.5rem;
+}
+
+.scene__background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background: linear-gradient(180deg, #ffeef2 0%, #fff7ef 60%, #fff 100%);
+}
+
+.sky-glow {
+  position: absolute;
+  inset: -30% -10% auto -10%;
+  height: 60%;
+  background: radial-gradient(circle at top, rgba(255, 196, 212, 0.7), transparent 70%);
+}
+
+.grass-layer {
+  position: absolute;
+  bottom: -2rem;
+  width: 100%;
+  height: 45%;
+  background: url("../assets/images/background/grass-loop.webp") center/cover no-repeat;
+  opacity: 0.5;
+  animation: sway 10s ease-in-out infinite;
+}
+
+.grass-layer--front {
+  opacity: 0.8;
+  filter: saturate(1.2);
+  animation-duration: 7s;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: translateX(-1%);
+  }
+  50% {
+    transform: translateX(1%);
+  }
+}
+
+.scene__content {
+  position: relative;
+  z-index: 2;
+  width: min(90vw, 900px);
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.intro,
+.path,
+.gift,
+.reveal {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gallery__frame {
+  width: min(70vw, 420px);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow);
+  background: white;
+}
+
+.gallery__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__nav {
+  font-size: 2rem;
+  color: var(--rose-dark);
+  background: white;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+.message {
+  max-width: 520px;
+}

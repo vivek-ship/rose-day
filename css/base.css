@@ -1,0 +1,75 @@
+:root {
+  color-scheme: light;
+  --rose: #ff6b91;
+  --rose-dark: #e64a73;
+  --cream: #fff7ef;
+  --text: #3d2a2f;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+}
+
+p {
+  font-size: 1rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--rose-dark);
+}
+
+.primary,
+.secondary {
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.primary {
+  background: var(--rose);
+  color: white;
+}
+
+.secondary {
+  background: white;
+  color: var(--rose-dark);
+  border: 1px solid #f2c3d1;
+}
+
+.primary:hover,
+.secondary:hover {
+  transform: translateY(-2px);
+}
+
+.lead {
+  font-size: 1.1rem;
+  max-width: 32rem;
+}
